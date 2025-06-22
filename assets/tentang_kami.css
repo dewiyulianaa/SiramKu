@@ -1,0 +1,216 @@
+/* General Styling */
+:root {
+    --primary-green: #3DFFB9;
+    --text-dark: #333;
+    --text-light: #555;
+    --bg-light: #F8F8F8;
+    --border-color: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header/Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-box {
+    background-color: var(--primary-green);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links ul li a.active {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.nav-links ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-green);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+    padding: 60px 40px;
+    position: relative;
+    min-height: 500px; /* Adjust as needed */
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Ensures content takes enough space */
+    position: relative;
+    z-index: 2; /* Ensures text is above image placeholder */
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em; /* Adjust as needed */
+    line-height: 0.9;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    color: var(--text-light);
+    max-width: 350px;
+    line-height: 1.6;
+}
+
+.accent-line {
+    position: absolute;
+    background-color: var(--primary-green);
+    z-index: 0; /* Behind the text */
+}
+
+.accent-line.top-right {
+    width: 150px; /* Adjust length */
+    height: 10px; /* Adjust thickness */
+    top: 100px; /* Position relative to hero-section */
+    right: 40%; /* Adjust position */
+    transform: rotate(90deg); /* Rotate as seen in image */
+    transform-origin: top left;
+}
+
+.accent-line.bottom-left {
+    width: 80px; /* Adjust length */
+    height: 10px; /* Adjust thickness */
+    bottom: 50px; /* Position relative to hero-section */
+    left: 0; /* Position relative to hero-section */
+}
+
+
+.hero-image-placeholder {
+    flex: 1;
+    min-width: 400px; /* Ensures placeholder takes enough space */
+    background-color: #eee; /* Placeholder color */
+    background-image: url('https://via.placeholder.com/600x400/D3D3D3/000000?text=Your+Team+Image+Here'); /* Example placeholder image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-left: 20px; /* Spacing between text and image */
+    position: relative;
+    z-index: 1;
+    min-height: 300px; /* Minimum height for the image area */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-content, .hero-image-placeholder {
+        min-width: unset;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hero-image-placeholder {
+        margin-top: 30px;
+    }
+
+    .hero-title {
+        font-size: 3.5em;
+    }
+
+    .accent-line.top-right {
+        right: 10%; /* Adjust for smaller screens */
+        top: 80px;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar, .hero-section {
+        padding: 15px;
+    }
+
+    .hero-title {
+        font-size: 2.8em;
+    }
+
+    .hero-description {
+        font-size: 1em;
+    }
+
+    .accent-line.bottom-left {
+        width: 60px;
+        bottom: 30px;
+    }
+}

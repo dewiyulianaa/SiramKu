@@ -1,0 +1,62 @@
+/* Background gradasi hijau */
+.stApp {
+    background: linear-gradient(to bottom, hsl(120, 1%, 24%), hsl(120, 2%, 20%),hwb(0 0% 100%))!important;
+    color: white !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    min-height: 100vh !important;
+}
+
+/* Header dan teks utama */
+h1, h2, h3 {
+    color: hsl(0, 13%, 92%) !important;
+    font-weight: 700 !important;
+    text-align: center;
+}
+
+/* Paragraf */
+p, .stMarkdown {
+    color: hsl(0, 0%, 100%) !important;
+    font-size: 1.1em !important;
+    line-height: 1.6;
+}
+
+/* Tombol utama */
+.stButton > button {
+    background-color: white !important;
+    color: #27ae60 !important;
+    font-weight: bold !important;
+    padding: 0.6em 1.4em !important;
+    border-radius: 10px !important;
+    border: 2px solid #27ae60 !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.stButton > button:hover {
+    background-color: #27ae60 !important;
+    color: white !important;
+}
+
+/* Gambar */
+img {
+    border-radius: 16px !important;
+    box-shadow: none;
+}
+
+/* Section block putih (jika butuh highlight konten) */
+.card {
+    background-color: rgb(211, 112, 112) !important;
+    color: hsl(0, 3%, 82%) !important;
+    padding: 2em !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 12px hwb(0 1% 99% / 0.15);
+    margin: 1.5em 0;
+}
+.profile-img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
