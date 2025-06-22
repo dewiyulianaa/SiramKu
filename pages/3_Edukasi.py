@@ -44,7 +44,7 @@ st.markdown("---")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image("https://gdm.id/wp-content/uploads/2023/10/jenis-penyakit-tanaman-tomat.jpg", use_container_width=True)
+    st.image("https://media.istockphoto.com/id/182067740/id/foto/tomat-busuk.jpg?s=612x612&w=0&k=20&c=iCjbpBv6yjXROl1iibuTLtfJ1rkuXt82C3mH5e78gtg=", use_container_width=True)
     st.markdown("### \U0001F345 Penyakit Tomat")
     st.markdown("Pelajari cara mengatasi busuk buah, layu fusarium, dan virus TYLCV pada tomat.")
     st.link_button("Baca Selengkapnya", "https://www.dgwfertilizer.co.id/3-penyakit-tanaman-tomat-serta-cara-mengendalikannya/")
