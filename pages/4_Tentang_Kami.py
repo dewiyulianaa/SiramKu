@@ -63,9 +63,6 @@ with col1:
         <p style='margin-top: 10px; color: #888;'>Dewi Yuliana</p>
     </div>
     """, unsafe_allow_html=True)
-    else:
-        st.warning("Foto Dewi tidak ditemukan.")
-
 with col2:
     st.markdown("""
     <h2>Diformulasikan Untuk Berbagai <span class="highlight">Kebutuhan Otomatisasi</span></h2>
