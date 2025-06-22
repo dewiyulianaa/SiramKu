@@ -57,14 +57,12 @@ st.markdown("---")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    img_path = os.path.join("assets/foto_dewi.jpg")
-    if os.path.exists(img_path):
-        st.markdown(f"""
-        <div style='text-align: center;'>
-            <img src="{img_path}" class="rounded-image">
-            <p style='margin-top: 10px; color: #888;'>Dewi Yuliana</p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style='text-align: center;'>
+        <img src="https://raw.githubusercontent.com/dewiyulianaa/SiramKu/main/assets/foto_dewi.jpg" class="rounded-image">
+        <p style='margin-top: 10px; color: #888;'>Dewi Yuliana</p>
+    </div>
+    """, unsafe_allow_html=True)
     else:
         st.warning("Foto Dewi tidak ditemukan.")
 
