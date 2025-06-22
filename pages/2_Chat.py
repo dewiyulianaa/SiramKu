@@ -80,7 +80,7 @@ if st.session_state.chat_active:
 # Tampilkan pesan pamit sebelum reset
 if st.session_state.show_goodbye:
     show_bubble("user", "cukup")
-    show_bubble("bot", "Sampai jumpa! Terima kasih telah menggunakan PanduTanam 👋")
+    show_bubble("bot", "Sampai jumpa! Terima kasih telah menggunakan SiramKu 👋")
     # Reset seluruh state setelah pamit ditampilkan
     st.session_state.chat_active = False
     st.session_state.last_user = ""
