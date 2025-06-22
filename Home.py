@@ -1,16 +1,18 @@
 import streamlit as st
-from PIL import Image
 import os
 
 st.set_page_config(page_title="SiramKu", layout="centered")
 
-# Inject style.css
-with open("assets/style.css") as f:
-    content = f.read()
-    st.markdown(f"<style>{content}</style>", unsafe_allow_html=True)
-    st.write("CSS Loaded:", len(content))  # cek panjang file, harus > 0
+# ✅ Inject CSS dari file style.css
+css_path = os.path.join("assets", "style.css")
+if os.path.exists(css_path):
+    with open(css_path) as f:
+        content = f.read()
+        st.markdown(f"<style>{content}</style>", unsafe_allow_html=True)
+else:
+    st.warning("style.css tidak ditemukan.")
 
-# Tambahan CSS kustom dark mode
+# ✅ Tambahan CSS khusus halaman ini (inline)
 st.markdown("""
 <style>
 body {
@@ -33,19 +35,9 @@ body {
     margin-bottom: 40px;
     line-height: 1.6;
 }
-.center-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-.mockup {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
 button[kind="primary"] {
-    background-color: #ffcc00;
-    color: #000;
+    background-color: #ffcc00 !important;
+    color: #000000 !important;
     font-weight: bold;
     border-radius: 10px;
     padding: 10px 25px;
@@ -53,20 +45,22 @@ button[kind="primary"] {
 </style>
 """, unsafe_allow_html=True)
 
-# Logo di kiri atas
-# Logo besar tengah halaman (hero section)
-st.markdown("<div style='text-align: center; padding-top: 30px;'>", unsafe_allow_html=True)
-st.image("assets/logo.png", width=180)
-st.markdown("</div>", unsafe_allow_html=True)
+# ✅ Tampilkan logo di tengah atas
+logo_path = os.path.join("assets", "logo.png")
+if os.path.exists(logo_path):
+    st.markdown("<div style='text-align: center; padding-top: 30px;'>", unsafe_allow_html=True)
+    st.image(logo_path, width=180)
+    st.markdown("</div>", unsafe_allow_html=True)
+else:
+    st.error("Logo tidak ditemukan.")
 
-# Konten utama
+# ✅ Teks hero section
 st.markdown('<div class="big-title">Hi, I’m SiramKu</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Saya membantu Anda memantau dan merawat tanaman secara otomatis\nmenggunakan teknologi IoT dan AI.</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Saya membantu Anda memantau dan merawat tanaman secara otomatis<br>menggunakan teknologi IoT dan AI.</div>', unsafe_allow_html=True)
 
-# Tombol navigasi
+# ✅ Tombol navigasi ke Dashboard
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if st.button("🌿 Mulai Pantau Tanaman"):
-        st.switch_page("1_dashboard.py")
-
-
+        # Pastikan file ini berada di `pages/1_Dashboard.py` (bukan 1_dashboard.py)
+        st.switch_page("1_Dashboard.py")  # Nama file case-sensitive
