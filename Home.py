@@ -67,6 +67,6 @@ st.markdown('<div class="subtitle">Saya membantu Anda memantau dan merawat tanam
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if st.button("🌿 Mulai Pantau Tanaman"):
-        st.switch_page("pages/1_dashboard.py")
+        st.switch_page("1_dashboard.py")
 
 
