@@ -12,10 +12,13 @@ with open("assets/style.css") as f:
 
 st.title("📊 Dashboard Monitoring Tanaman")
 
-# Setup akses Google Sheets
+# Setup Google Sheets API
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("data/iot-irrigation-dashboard-a15e11979593.json", scope)
+creds_dict = dict(st.secrets["gspread"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
+
+
 
 # Ambil data dari Google Sheet
 try:
