@@ -57,7 +57,7 @@ st.markdown("---")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    img_path = os.path.join("https://github.com/dewiyulianaa/SiramKu/blob/main/assets/foto_dewi.jpg")
+    img_path = os.path.join("SiramKu/blob/main/assets/foto_dewi.jpg")
     if os.path.exists(img_path):
         st.markdown(f"""
         <div style='text-align: center;'>
